@@ -1,6 +1,4 @@
-;-------------------------------------------------------
-; inicialização
-;-------------------------------------------------------
+;-----------------------
 ListLines, Off
 My_ScriptName:=%True%
 Try Menu, Tray, Icon, %My_ScriptName%
@@ -3224,7 +3222,7 @@ ResetPartyGUI:
 return
 
 OpenFolderContainingNames:
-	run %A_MyDocuments%\DofusPouletFlemmards\SCREENSHOT
+	run %A_MyDocuments%\Dofus_Helper\SCREENSHOT
 return
 
 OpenFolderContainingNamesEchange:
@@ -3945,7 +3943,7 @@ return
 IdentifyAcc(){
 	WinGetTitle, title, A
 	FoundPos := InStr(title, " ")
-	title := SubStr(title, 1,FoundPos-1)
+	title := title
 	WinGet, var, PID, A
 	pid := var
 	Nicknames.push(new NicknamesPaired(title,var))
@@ -4192,7 +4190,7 @@ mySwitchKeyA:
 
 	for key, val in Nicknames {
 		name := val.name
-		ImageSearch, FoundX, FoundY, NameTurnPosX1,NameTurnPosY1, NameTurnPosX2, NameTurnPosY2,*3 %A_MyDocuments%\DofusPouletFlemmards\SCREENSHOT\%name%.png
+		ImageSearch, FoundX, FoundY, NameTurnPosX1,NameTurnPosY1, NameTurnPosX2, NameTurnPosY2,*3 %A_MyDocuments%\Dofus_Helper\SCREENSHOT\%name%.png
 		if (ErrorLevel = 0)
 		{
 			if(val.name!=LastImageFound){
@@ -6489,8 +6487,8 @@ return
 
 				lineContainingNickname := A_LoopField
 
-				EndPos := InStr(lineContainingNickname, " ")-1
-				Nickname := SubStr(lineContainingNickname, 1, EndPos)
+				
+				Nickname := lineContainingNickname
 
 				WinGet, var, PID, A
 				pid := var
