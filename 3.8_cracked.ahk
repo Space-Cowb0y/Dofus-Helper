@@ -1,7 +1,3 @@
-/*
-	This script initializes and reloads the DofusPouletFlemmards-cracked-master script.
-	It closes any existing instances of the script before running it.
-*/
 ;-------------------------------------------------------
 ; inicialização
 ;-------------------------------------------------------
